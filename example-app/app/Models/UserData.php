@@ -5,9 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Role extends Model
+class DataUser extends Model
 {
     protected $fillable = [
-        'name'
+        'preferences',
+        'photo',
+        'gender',
+        'description',
+        'id_user',
+        'docs',
+        'location'
     ];
 }
