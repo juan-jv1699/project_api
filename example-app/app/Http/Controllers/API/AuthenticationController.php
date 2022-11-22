@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Http\Requests\AuthenticationRequest;
 use App\Http\Requests\LoginRequest;
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
-use Symfony\Component\HttpKernel\Event\ResponseEvent;
 
 class AuthenticationController extends Controller
 {
@@ -33,7 +33,7 @@ class AuthenticationController extends Controller
  
         if (! $user || ! Hash::check($request->password, $user->password)) {
             throw ValidationException::withMessages([
-                'email' => ['The provided credentials are incorrect.'],
+                'msg' => ['The provided credentials are incorrect.'],
             ]);
         }
      

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\UserController;
 use App\Http\Controllers\API\AuthenticationController;
+use App\Http\Controllers\API\UserDataController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -30,15 +31,21 @@ Route::group(['middleware'=>['auth:sanctum']],function(){
     Route::post('logout',[AuthenticationController::class,'logout']);
 
     //all methods user
-    Route::get('user/all',[UserController::class,'index']);
+    Route::get('user/all',[UserController::class,'allUsers']);
     Route::get('user/mostrar/{user}',[UserController::class,'show']);
     
-    // Route::post('user/new',[UserController::class,'store']);
+    Route::post('user/new',[UserController::class,'store']);
     
     Route::put('user/update/{user}',[UserController::class,'update']);
     
     Route::delete('user/delete/{user}',[UserController::class,'destroy']);
+    
+    //methods user data
+    Route::get('datauser/{user}',[UserDataController::class,'show']);
+    Route::post('datauser/new',[UserDataController::class,'store']);
+    Route::put('datauser/update/{user}',[UserDataController::class,'update']);
 });
+
 
 // ---------------------
 // forma para englobar todos lo metodos en una sola ruta

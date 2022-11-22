@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Http\Requests\UserCreateRequest;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Http\Requests\UserCreateRequest as RequestsUserCreateRequest;
@@ -17,7 +16,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function allUsers()
     {
         return UserResource::collection(User::all());
     }
@@ -71,6 +70,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
+        $user->userData()->delete();
         $user->delete();
         return (new UserResource($user))->additional(['msg'=>'Usuario eliminado correctamente']);
     }

@@ -24,6 +24,7 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('admin'),    
                 'birthdate' => '1999-10-16',
                 'cc' => '123456789',
+                'role'=>1
             ]
        ]);
     }
