@@ -4,7 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PublicationPostRequest;
-use App\Http\Requests\UpdatePublicationRequest;
+use App\Http\Requests\UpdatePublicationRequest as ReqUpdatePublicationRequest;
 use Illuminate\Http\Request;
 use App\Models\Publication;
 
@@ -60,7 +60,7 @@ class PublicationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update( UpdatePublicationRequest $request,Publication $publication)
+    public function update(ReqUpdatePublicationRequest $request,Publication $publication)
     {
         $publication->update($request->all());
         return response()->json([
