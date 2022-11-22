@@ -4,6 +4,7 @@ use App\Http\Controllers\API\UserController;
 use App\Http\Controllers\API\AuthenticationController;
 use App\Http\Controllers\API\PublicationController;
 use App\Http\Controllers\API\UserDataController;
+use App\Http\Controllers\API\ImagesPublicationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -49,14 +50,22 @@ Route::group(['middleware'=>['auth:sanctum']],function(){
     
     
     // methods publication 
-    Route::get('publication',[PublicationController::class,'index']);
-    Route::get('publication/{publication}',[PublicationController::class,'show']);
-    
-    Route::post('publication/new',[PublicationController::class,'store']);
-    Route::put('publication/update/{publication}',[PublicationController::class,'update']);
-    Route::delete('publication/delete/{publication}',[PublicationController::class,'destroy']);
     
 });
+Route::get('publication',[PublicationController::class,'index']);
+Route::get('publication/{publication}',[PublicationController::class,'show']);
+
+Route::post('publication/new',[PublicationController::class,'store']);
+Route::put('publication/update/{publication}',[PublicationController::class,'update']);
+Route::delete('publication/delete/{publication}',[PublicationController::class,'destroy']);
+
+// methods images_publication
+Route::get('images_publication/{ImagesPublication}',[ImagesPublicationController::class,'show']);
+
+Route::post('images_publication/new',[ImagesPublicationController::class,'store']);
+Route::put('images_publication/update/{ImagesPublication}',[ImagesPublicationController::class,'update']);
+Route::delete('images_publication/delete/{ImagesPublication}',[ImagesPublicationController::class,'destroy']);
+
 
 
 // ---------------------
