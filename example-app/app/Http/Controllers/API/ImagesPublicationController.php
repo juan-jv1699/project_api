@@ -24,7 +24,7 @@ class ImagesPublicationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -35,7 +35,7 @@ class ImagesPublicationController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**

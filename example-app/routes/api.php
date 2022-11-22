@@ -44,6 +44,7 @@ Route::group(['middleware'=>['auth:sanctum']],function(){
     Route::get('datauser/{user}',[UserDataController::class,'show']);
     Route::post('datauser/new',[UserDataController::class,'store']);
     Route::put('datauser/update/{user}',[UserDataController::class,'update']);
+    // ---- nota para eliminar los datso de un usuario se elimina directamente el usuario 
 });
 
 

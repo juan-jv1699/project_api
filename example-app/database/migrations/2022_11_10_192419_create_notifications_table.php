@@ -16,12 +16,12 @@ return new class extends Migration
         Schema::create('notifications', function (Blueprint $table) {
             $table->id();
             $table->string('content');
-            $table->unsignedBigInteger('id_type_notif');
-            $table->foreign('id_type_notif')->references('id')->on('type_notifications');
-            $table->unsignedBigInteger('id_receiver');
-            $table->unsignedBigInteger('id_transmitter');
-            $table->foreign('id_receiver')->references('id')->on('users');
-            $table->foreign('id_transmitter')->references('id')->on('users');
+            $table->unsignedBigInteger('type_notification_id');
+            $table->foreign('type_notification_id')->references('id')->on('type_notifications');
+            $table->unsignedBigInteger('receiver_id');
+            $table->unsignedBigInteger('transmitter_id');
+            $table->foreign('receiver_id')->references('id')->on('users');
+            $table->foreign('transmitter_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

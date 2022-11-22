@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('report', function (Blueprint $table) {
             $table->id();
             $table->text('reasons');
-            $table->unsignedBigInteger('id_publication');
-            $table->foreign('id_publication')->references('id')->on('publications');
+            $table->unsignedBigInteger('publication_id');
+            $table->foreign('publication_id')->references('id')->on('publications');
             $table->boolean('validate')->default(0);
             $table->timestamps();
         });
