@@ -1,8 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\Controller;
+use App\Http\Requests\PublicationPostRequest;
+use App\Http\Requests\UpdatePublicationRequest;
 use Illuminate\Http\Request;
+use App\Models\Publication;
 
 class PublicationController extends Controller
 {
@@ -13,7 +17,11 @@ class PublicationController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json([
+            'res'=>true,
+            'msg'=>'todas las publicaciones',
+            'data'=>Publication::all()
+        ]);
     }
 
     /**
@@ -22,9 +30,13 @@ class PublicationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PublicationPostRequest $request)
     {
-        //
+        $publication = Publication::create($request->all());
+        return response()->json([
+            'res'=>true,
+            'msg'=>'publication generada con exito'
+        ]);
     }
 
     /**
@@ -33,9 +45,12 @@ class PublicationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Publication $publication)
     {
-        //
+        return response()->json([
+            'res'=>true,
+            'data'=>$publication
+        ]);
     }
 
     /**
@@ -45,9 +60,14 @@ class PublicationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update( UpdatePublicationRequest $request,Publication $publication)
     {
-        //
+        $publication->update($request->all());
+        return response()->json([
+            'res'=>true,
+            'msg'=>'publicacion actualizada con exito',
+            'data'=>$publication
+        ]);
     }
 
     /**
@@ -56,8 +76,12 @@ class PublicationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Publication $publication)
     {
-        //
+        $publication->delete();
+        return response()->json([
+            'res'=>true,
+            'msg'=>'publicacion eliminada con exito'
+        ]);
     }
 }
