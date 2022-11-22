@@ -1,8 +1,13 @@
 <?php
+namespace App\Http\Controllers\API;
 
-namespace App\Http\Controllers;
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\Models\ImagesPublication;
+use App\Http\Requests\ImagesPublicationPostRequest;
+use App\Http\Requests\ImagesPublicationUpdateRequest;
+
 
 class ImagesPublicationController extends Controller
 {
@@ -13,7 +18,7 @@ class ImagesPublicationController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -22,9 +27,14 @@ class ImagesPublicationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ImagesPublicationPostRequest $request)
     {
-        
+        $registro = ImagesPublication::create($request->all());
+        return response()->json([
+            'res'=>true,
+            'msg'=>'imagenes resgistradas con exito',
+            'data'=>$registro
+        ]);
     }
 
     /**
@@ -33,9 +43,12 @@ class ImagesPublicationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(ImagesPublication $ImagesPublication)
     {
-        
+        return response()->json([
+            'res'=>true,
+            'data'=>$ImagesPublication
+        ]);
     }
 
     /**
@@ -45,9 +58,14 @@ class ImagesPublicationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ImagesPublicationUpdateRequest $request, ImagesPublication $ImagesPublication)
     {
-        //
+        $ImagesPublication->update($request->all());
+        return response()->json([
+            'res'=>true,
+            'msg'=>'publicacion actualizada con exito',
+            'data'=>$ImagesPublication
+        ]);
     }
 
     /**
@@ -56,8 +74,12 @@ class ImagesPublicationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(ImagesPublication $image)
     {
-        //
+        $image->delete();
+        return response()->json([
+            'res'=>true,
+            'msg'=>'imagenes eliminadas con exito'
+        ]);
     }
 }
