@@ -9,6 +9,7 @@ class Comment extends Model
 {
     protected $fillable = [
         'content',
-        'id_user'
+        'user_id',
+        'publication_id'
     ];
 }
