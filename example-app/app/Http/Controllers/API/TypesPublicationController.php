@@ -5,60 +5,52 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+//Model
+use App\Models\TypePublication;
+
+//Requests
+use App\Http\Requests\SaveTypePublicationRequest;
+use App\Http\Requests\UpdateTypePublicationRequest;
+
 class TypesPublicationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        return TypePublication::all();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(SaveTypePublicationRequest $request)
     {
-        //
+        TypePublication::create($request->all());
+        return response()->json([
+            'res' => true,
+            'msg' => "Publicacion creado exitosamente!"
+        ]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function show(TypePublication $publication)
     {
-        //
+        return response()->json([
+            'res' => true,
+            'result' => $publication
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(UpdateTypePublicationRequest $request, TypePublication $id)
     {
-        //
+        $id->update($request->all());
+        return response()->json([
+            'res' => true,
+            'msg' => "Se actualizo la publicacion correctamente"
+        ],200);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function destroy(TypePublication $publication)
     {
-        //
+        $publication->delete();
+        return response()->json([
+            'res' => true,
+            'msg' => "Se elimino la publicacion correctamente"
+        ],200);
     }
 }

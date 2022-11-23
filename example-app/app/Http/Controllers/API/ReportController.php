@@ -3,6 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+//Model
+use App\Models\Report;
+
+//Requests
+use App\Http\Requests\SaveReportRequest;
+use App\Http\Requests\UpdateReportRequest;
+
+
 
 class ReportController extends Controller
 {
@@ -13,51 +23,41 @@ class ReportController extends Controller
      */
     public function index()
     {
-        //
+        return Report::all();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(SaveReportRequest $request)
     {
-        //
+        RoReportle::create($request->all());
+        return response()->json([
+            'res' => true,
+            'msg' => "Reporte creado exitosamente!"
+        ]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function show(Report $report)
     {
-        //
+        return response()->json([
+            'res' => true,
+            'result' => $report
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(UpdateReportRequest $request, Report $id)
     {
-        //
+        $id->update($request->all());
+        return response()->json([
+            'res' => true,
+            'msg' => "Se actualizo el rol correctamente"
+        ],200);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function destroy(Report $report)
     {
-        //
+        $report->delete();
+        return response()->json([
+            'res' => true,
+            'msg' => "Se elimino el reporte correctamente"
+        ],200);
     }
 }
