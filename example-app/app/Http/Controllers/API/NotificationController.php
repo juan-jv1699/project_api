@@ -1,6 +1,8 @@
 <?php
+namespace App\Http\Controllers\API;
 
-namespace App\Http\Controllers;
+use App\Http\Controllers\Controller;
+use App\Models\Notification;
 
 use Illuminate\Http\Request;
 
@@ -33,7 +35,7 @@ class NotificationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Notification $notification)
     {
         //
     }
@@ -45,7 +47,7 @@ class NotificationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Notification $notification)
     {
         //
     }
@@ -56,7 +58,7 @@ class NotificationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Notification $notification)
     {
         //
     }
