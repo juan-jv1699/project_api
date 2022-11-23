@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\UserController;
 use App\Http\Controllers\API\AuthenticationController;
+use App\Http\Controllers\API\CommentController;
 use App\Http\Controllers\API\PublicationController;
 use App\Http\Controllers\API\UserDataController;
 use App\Http\Controllers\API\ImagesPublicationController;
@@ -66,6 +67,13 @@ Route::post('images_publication/new',[ImagesPublicationController::class,'store'
 Route::put('images_publication/update/{ImagesPublication}',[ImagesPublicationController::class,'update']);
 Route::delete('images_publication/delete/{ImagesPublication}',[ImagesPublicationController::class,'destroy']);
 
+
+// methods comment
+Route::get('comment/{comment}',[CommentController::class,'show']);
+
+Route::post('comment/new',[CommentController::class,'store']);
+Route::put('comment/update/{comment}',[CommentController::class,'update']);
+Route::delete('comment/delete/{comment}',[CommentController::class,'destroy']);
 
 
 // ---------------------
