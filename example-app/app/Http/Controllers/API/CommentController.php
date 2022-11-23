@@ -1,6 +1,9 @@
 <?php
+namespace App\Http\Controllers\API;
 
-namespace App\Http\Controllers;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\CommentRequest;
+use App\Models\Comment;
 
 use Illuminate\Http\Request;
 
@@ -13,7 +16,7 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -22,9 +25,14 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CommentRequest $request)
     {
-        //
+        $comment = Comment::create($request->all());
+        return response()->json([
+            'res'=>true,
+            'msg'=>'comentario creado con exito',
+            'data'=>$comment
+        ]);
     }
 
     /**
@@ -33,9 +41,12 @@ class CommentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Comment $comment)
     {
-        //
+        return response()->json([
+            'res'=>true,
+            'data'=>$comment
+        ]);
     }
 
     /**
@@ -45,9 +56,13 @@ class CommentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CommentRequest $request, Comment $comment)
     {
-        //
+        $com = $comment->update($request->all());
+        return response()->json([
+            'res'=>true,
+            'msg'=>'comentario actualizado con exito',
+        ]);
     }
 
     /**
@@ -56,8 +71,12 @@ class CommentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Comment $comment)
     {
-        //
+        $comment->delete();
+        return response()->json([
+            'res'=>true,
+            'msg'=>'comentario eliminado con exito'
+        ]);
     }
 }
