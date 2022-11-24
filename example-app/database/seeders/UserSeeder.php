@@ -25,6 +25,14 @@ class UserSeeder extends Seeder
                 'birthdate' => '1999-10-16',
                 'cc' => '123456789',
                 'role'=>1
+            ],
+            [
+                'name' => 'user',
+                'email' => 'usertest@gmail.com',
+                'password' => Hash::make('usertest'),    
+                'birthdate' => '2000-05-12',
+                'cc' => '123467214',
+                'role'=>2
             ]
        ]);
     }
