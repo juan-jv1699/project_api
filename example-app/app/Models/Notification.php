@@ -9,8 +9,8 @@ class Notification extends Model
 {
     protected $fillable = [
         'content',
-        'id_type_notif',
-        'id_receiver',
-        'id_transmitter'
+        'type_notification_id',
+        'receiver_id',
+        'transmitter_id'
     ];
 }
