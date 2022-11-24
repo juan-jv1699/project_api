@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Notification;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Js;
 
 class NotificationController extends Controller
 {
@@ -15,7 +16,10 @@ class NotificationController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json([
+            'res'=>true,
+            'data'=>Notification::all()
+        ]);
     }
 
     /**
@@ -26,7 +30,12 @@ class NotificationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $notification = Notification::create($request->all());
+        return response()->json([
+            'res'=>true,
+            'msg'=>'Notificacion generada con exito',
+            'data'=>$notification
+        ]);
     }
 
     /**
@@ -37,7 +46,10 @@ class NotificationController extends Controller
      */
     public function show(Notification $notification)
     {
-        //
+        return response()->json([
+            'res'=>true,
+            'data'=>$notification
+        ]);
     }
 
     /**
@@ -49,8 +61,8 @@ class NotificationController extends Controller
      */
     public function update(Request $request, Notification $notification)
     {
-        //
-    }
+        // not used 
+    }   
 
     /**
      * Remove the specified resource from storage.
@@ -60,6 +72,10 @@ class NotificationController extends Controller
      */
     public function destroy(Notification $notification)
     {
-        //
+     $notification->delete();
+     return response()->json([
+        'res'=>true,
+        'msg'=>'Notificacion eliminada con exito'
+     ]);   
     }
 }
