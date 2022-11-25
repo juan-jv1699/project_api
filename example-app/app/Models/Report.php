@@ -9,7 +9,7 @@ class Report extends Model
 {
     protected $fillable = [
         'reasons',
-        'id_publication',
+        'publication_id',
         'validate'
     ];
 }

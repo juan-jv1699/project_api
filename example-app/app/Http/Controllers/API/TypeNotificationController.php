@@ -2,63 +2,61 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+//Model
+use App\Models\TypeNotification;
+
+//Requests
+use App\Http\Requests\SaveTypeNotificationRequest as Save;
+use App\Http\Requests\UpdateTypeNotiRequest as Update;
+
+
 
 class TypeNotificationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
-        //
+        return TypeNotification::all();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+   
+    public function store(Save $request)
     {
-        //
+        TypeNotification::create($request->all());
+        return response()->json([
+            'res' => true,
+            'msg' => "Role creado exitosamente!"
+        ],200);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    
+    public function show(TypeNotification $typepublication)
     {
-        //
+        return response()->json([
+            'res' => true,
+            'NotificationResult' => $typepublication
+        ],200);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    
+    public function update(Update $request,TypeNotification  $TypeNotification)
     {
-        //
+        $TypeNotification->update($request->all());
+        return response()->json([
+            'res' => true,
+            'msg' => "Se actualizo el tipo de notificacion"
+        ],200);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function destroy(TypeNotification $TypeNotification)
     {
-        //
+        $TypeNotification->delete();
+        return response()->json([
+            'res' => true,
+            'msg' => "Se elimino el tipo de notificacion correctamente"
+        ],200);
     }
 }

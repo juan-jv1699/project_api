@@ -2,63 +2,57 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+//Model
+use App\Models\Role;
+
+//Requests
+use App\Http\Requests\SaveRoleRequest;
+use App\Http\Requests\UpdateRoleRequest;
+
 
 class RoleController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function index()
     {
-        //
+        return Role::all();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(SaveRoleRequest $request)
     {
-        //
+        Role::create($request->all());
+        return response()->json([
+            'res' => true,
+            'msg' => "Rol creado exitosamente!"
+        ]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function show(Role $role)
     {
-        //
+        return response()->json([
+            'res' => true,
+            'result' => $role
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(UpdateRoleRequest $request, Role $id)
     {
-        //
+        $id->update($request->all());
+        return response()->json([
+            'res' => true,
+            'msg' => "Se actualizo el rol correctamente"
+        ],200);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function destroy(Role $role)
     {
-        //
+        $role->delete();
+        return response()->json([
+            'res' => true,
+            'msg' => "Se elimino el rol correctamente"
+        ],200);
     }
 }
