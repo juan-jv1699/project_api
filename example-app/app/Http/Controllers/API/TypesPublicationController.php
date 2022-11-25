@@ -28,26 +28,26 @@ class TypesPublicationController extends Controller
         ]);
     }
 
-    public function show(TypePublication $publication)
+    public function show(TypePublication $typepublication)
     {
         return response()->json([
             'res' => true,
-            'result' => $publication
+            'result' => $typepublication
         ]);
     }
 
-    public function update(UpdateTypePublicationRequest $request, TypePublication $id)
+    public function update(UpdateTypePublicationRequest $request, TypePublication $typepublication)
     {
-        $id->update($request->all());
+        $typepublication->update($request->all());
         return response()->json([
             'res' => true,
             'msg' => "Se actualizo la publicacion correctamente"
         ],200);
     }
 
-    public function destroy(TypePublication $publication)
+    public function destroy(TypePublication $typepublication)
     {
-        $publication->delete();
+        $typepublication->delete();
         return response()->json([
             'res' => true,
             'msg' => "Se elimino la publicacion correctamente"

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class TypePublication extends Model
 {
     protected $fillable = [
-        'id_publication',
-        'id_type_publication'
+        "name",
+        "description"
     ];
 }

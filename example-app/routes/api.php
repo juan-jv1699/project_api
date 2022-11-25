@@ -57,39 +57,38 @@ Route::group(['middleware'=>['auth:sanctum']],function(){
     //Rutas Añadidas Por Esteban
 
 
-        //Methods Reports
-        Route::get('reports',[ReportController::class,'index']);
-        Route::post('reports',[ReportController::class,'store']);
-        Route::get('reports/{report}',[ReportController::class,'show']);
-        Route::put('reports/{report}',[ReportController::class,'update']);
-        Route::delete('reports/{report}',[ReportController::class,'destroy']);
-
-        //Methods TypesPublication 
-        Route::get('typespublication',[TypesPublicationController::class,'index']);
-        Route::post('typespublication',[TypesPublicationController::class,'store']);
-        Route::get('typespublication/{typepublication}',[TypesPublicationController::class,'show']);
-        Route::put('typespublication/{typepublication}',[TypesPublicationController::class,'update']);
-        Route::delete('typespublication/{typepublication}',[TypesPublicationController::class,'destroy']);
-
-        //Methods TypesNotification
-        Route::get('notification',[TypeNotificationController::class,'index']);
-        Route::post('notification',[TypeNotificationController::class,'store']);
-        Route::get('notification/{TypeNotification}',[TypeNotificationController::class,'show']);
-        Route::put('notification/{TypeNotification}',[TypeNotificationController::class,'update']);
-        Route::delete('notification/{TypeNotification}',[TypeNotificationController::class,'destroy']);
-        
-        
-        //Methods Role
-        Route::get('role',[RoleController::class,'index']);
-        Route::post('role',[RoleController::class,'store']);
-        Route::get('role/{role}',[RoleController::class,'show']);
-        Route::put('role/{role}',[RoleController::class,'update']);
-        Route::delete('role/{role}',[RoleController::class,'destroy']);
+      
     });
 
     
    
+  //Methods Reports
+  Route::get('reports',[ReportController::class,'index']);
+  Route::post('reports',[ReportController::class,'store']);
+  Route::get('reports/{report}',[ReportController::class,'show']);
+  Route::put('reports/{report}',[ReportController::class,'update']);
+  Route::delete('reports/{report}',[ReportController::class,'destroy']);
 
+  //Methods TypesNotification
+  Route::get('typenotification',[TypeNotificationController::class,'index']);//Y
+  Route::post('typenotification',[TypeNotificationController::class,'store']);//Y
+  Route::get('typenotification/{TypeNotification}',[TypeNotificationController::class,'show']);//Y
+  Route::put('typenotification/{TypeNotification}',[TypeNotificationController::class,'update']);//NO
+  Route::delete('typenotification/{TypeNotification}',[TypeNotificationController::class,'destroy']);//Y
+
+  //Methods TypesPublication 
+  Route::get('typespublication',[TypesPublicationController::class,'index']);//Y
+  Route::post('typespublication',[TypesPublicationController::class,'store']);//Y
+  Route::get('typespublication/{typepublication}',[TypesPublicationController::class,'show']);//Y
+  Route::put('typespublication/{typepublication}',[TypesPublicationController::class,'update']);//NO
+  Route::delete('typespublication/{typepublication}',[TypesPublicationController::class,'destroy']);//Y
+
+  //Methods Role
+  Route::get('role',[RoleController::class,'index']);//Y
+  Route::post('role',[RoleController::class,'store']);//Y
+  Route::get('role/{role}',[RoleController::class,'show']);//Y
+  Route::put('role/{role}',[RoleController::class,'update']);//NO
+  Route::delete('role/{role}',[RoleController::class,'destroy']);//Y
 // ---------------------
 // forma para englobar todos lo metodos en una sola ruta
 // Route::apiResource('user/',UserController::class);

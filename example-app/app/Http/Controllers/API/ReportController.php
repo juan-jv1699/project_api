@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
+
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -14,13 +15,12 @@ use App\Http\Requests\UpdateReportRequest;
 
 
 
+
+
+
 class ReportController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function index()
     {
         return Report::all();
@@ -28,7 +28,7 @@ class ReportController extends Controller
 
     public function store(SaveReportRequest $request)
     {
-        RoReportle::create($request->all());
+        Report::create($request->all());
         return response()->json([
             'res' => true,
             'msg' => "Reporte creado exitosamente!"
@@ -43,9 +43,9 @@ class ReportController extends Controller
         ]);
     }
 
-    public function update(UpdateReportRequest $request, Report $id)
+    public function update(UpdateReportRequest $request, Report $report)
     {
-        $id->update($request->all());
+        $report->update($request->all());
         return response()->json([
             'res' => true,
             'msg' => "Se actualizo el rol correctamente"

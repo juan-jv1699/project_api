@@ -33,27 +33,27 @@ class TypeNotificationController extends Controller
     }
 
     
-    public function show(TypeNotification $data)
+    public function show(TypeNotification $typepublication)
     {
         return response()->json([
             'res' => true,
-            'NotificationResult' => $data
+            'NotificationResult' => $typepublication
         ],200);
     }
 
     
-    public function update(Update $request,TypeNotification  $id)
+    public function update(Update $request,TypeNotification  $TypeNotification)
     {
-        $id->update($request->all());
+        $TypeNotification->update($request->all());
         return response()->json([
             'res' => true,
             'msg' => "Se actualizo el tipo de notificacion"
         ],200);
     }
 
-    public function destroy(TypeNotification $notification)
+    public function destroy(TypeNotification $TypeNotification)
     {
-        $notification->delete();
+        $TypeNotification->delete();
         return response()->json([
             'res' => true,
             'msg' => "Se elimino el tipo de notificacion correctamente"
