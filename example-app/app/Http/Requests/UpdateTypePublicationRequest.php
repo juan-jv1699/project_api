@@ -15,7 +15,7 @@ class UpdateTypePublicationRequest extends FormRequest
     public function rules()
     {
         return [
-            "name" => "required|unique:type_publications,name,".$this->route('typespublication')->id,
+            "name" => "required|unique:type_publications,name,".$this->id,
             "description" => "required",
         ];
     }

@@ -24,7 +24,7 @@ class UpdateTypeNotiRequest extends FormRequest
     public function rules()
     {
         return [
-            "name" => "required|unique:type_notifications,name,".$this->route('notification')->id,
+            "name" => "required|unique:type_notifications,name,".$this->id,
             "description" => "required",
         ];
     }
