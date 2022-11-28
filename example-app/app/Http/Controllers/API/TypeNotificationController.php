@@ -28,7 +28,7 @@ class TypeNotificationController extends Controller
         TypeNotification::create($request->all());
         return response()->json([
             'res' => true,
-            'msg' => "Role creado exitosamente!"
+            'msg' => "Tipo de notificacion creado exitosamente!"
         ],200);
     }
 
