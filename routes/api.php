@@ -16,6 +16,7 @@ use App\Http\Controllers\API\ReportController;
 use App\Http\Controllers\API\RoleController;
 use App\Http\Controllers\API\TypeNotificationController;
 use App\Http\Controllers\API\TypesPublicationController;
+use App\Http\Controllers\API\LikeController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -88,32 +89,41 @@ Route::delete('notification/delete/{notification}',[NotificationController::clas
     
    
   //Methods Reports
-  Route::get('reports',[ReportController::class,'index']);
-  Route::post('reports',[ReportController::class,'store']);
-  Route::get('reports/{report}',[ReportController::class,'show']);
-  Route::put('reports/{report}',[ReportController::class,'update']);
-  Route::delete('reports/{report}',[ReportController::class,'destroy']);
+  Route::get('reports',[ReportController::class,'index']);//Y
+  Route::post('reports',[ReportController::class,'store']);//Y
+  Route::get('reports/{report}',[ReportController::class,'show']);//Y
+  Route::put('reports/{report}',[ReportController::class,'update']);//Y
+  Route::delete('reports/{report}',[ReportController::class,'destroy']);//Y
 
   //Methods TypesNotification
   Route::get('typenotification',[TypeNotificationController::class,'index']);//Y
   Route::post('typenotification',[TypeNotificationController::class,'store']);//Y
   Route::get('typenotification/{TypeNotification}',[TypeNotificationController::class,'show']);//Y
-  Route::put('typenotification/{TypeNotification}',[TypeNotificationController::class,'update']);//NO
+  Route::put('typenotification/{TypeNotification}',[TypeNotificationController::class,'update']);//Y
   Route::delete('typenotification/{TypeNotification}',[TypeNotificationController::class,'destroy']);//Y
 
   //Methods TypesPublication 
   Route::get('typespublication',[TypesPublicationController::class,'index']);//Y
   Route::post('typespublication',[TypesPublicationController::class,'store']);//Y
   Route::get('typespublication/{typepublication}',[TypesPublicationController::class,'show']);//Y
-  Route::put('typespublication/{typepublication}',[TypesPublicationController::class,'update']);//NO
+  Route::put('typespublication/{typepublication}',[TypesPublicationController::class,'update']);//Y
   Route::delete('typespublication/{typepublication}',[TypesPublicationController::class,'destroy']);//Y
 
   //Methods Role
   Route::get('role',[RoleController::class,'index']);//Y
   Route::post('role',[RoleController::class,'store']);//Y
   Route::get('role/{role}',[RoleController::class,'show']);//Y
-  Route::put('role/{role}',[RoleController::class,'update']);//NO
+  Route::put('role/{role}',[RoleController::class,'update']);//Y
   Route::delete('role/{role}',[RoleController::class,'destroy']);//Y
+
+  //Methods Likes 
+  Route::get('like',[LikeController::class,'index']);//Y
+  Route::post('like',[LikeController::class,'store']);//Y
+  Route::get('like/{like}',[LikeController::class,'show']);//Y
+  Route::put('like/{like}',[LikeController::class,'update']);//Y
+  Route::delete('like/{like}',[LikeController::class,'destroy']);//Y
+
+
 // ---------------------
 // forma para englobar todos lo metodos en una sola ruta
 // Route::apiResource('user/',UserController::class);
