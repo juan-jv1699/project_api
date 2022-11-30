@@ -39,27 +39,26 @@ Route::post('register',[AuthenticationController::class,'register']);
 Route::post('login',[AuthenticationController::class,'login']);
 
 Route::group(['middleware'=>['auth:sanctum']],function(){
-    Route::get('user/all',[UserController::class,'allUsers']);
     Route::post('logout',[AuthenticationController::class,'logout']);
-
-    //all methods user
-    
-    Route::get('user/mostrar/{user}',[UserController::class,'show']);
-    
-    Route::post('user/new',[UserController::class,'store']);
-    
-    Route::put('user/update/{user}',[UserController::class,'update']);
-    
-    Route::delete('user/delete/{user}',[UserController::class,'destroy']);
-    
-    //methods user data
-    Route::get('datauser/{user}',[UserDataController::class,'show']);
-    Route::post('datauser/new',[UserDataController::class,'store']);
-    Route::put('datauser/update/{user}',[UserDataController::class,'update']);
-    // ---- nota para eliminar los datso de un usuario se elimina directamente el usuario 
-   
     
 });
+Route::get('user/all',[UserController::class,'allUsers']);
+
+//all methods user
+
+Route::get('user/mostrar/{user}',[UserController::class,'show']);
+
+Route::post('user/new',[UserController::class,'store']);
+
+Route::put('user/update/{user}',[UserController::class,'update']);
+
+Route::delete('user/delete/{user}',[UserController::class,'destroy']);
+
+//methods user data
+Route::get('datauser/{user}',[UserDataController::class,'show']);
+Route::post('datauser/new',[UserDataController::class,'store']);
+Route::put('datauser/update/{user}',[UserDataController::class,'update']);
+// ---- nota para eliminar los datso de un usuario se elimina directamente el usuario 
 // methods publication 
 Route::get('publication',[PublicationController::class,'index']);
 Route::get('publication/{publication}',[PublicationController::class,'show']);
