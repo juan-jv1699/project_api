@@ -42,9 +42,9 @@ Route::group(['middleware'=>['auth:sanctum']],function(){
     Route::post('logout',[AuthenticationController::class,'logout']);
     
 });
-Route::get('user/all',[UserController::class,'allUsers']);
 
 //all methods user
+Route::get('user/all',[UserController::class,'allUsers']);
 
 Route::get('user/mostrar/{user}',[UserController::class,'show']);
 
@@ -58,7 +58,7 @@ Route::delete('user/delete/{user}',[UserController::class,'destroy']);
 Route::get('datauser/{user}',[UserDataController::class,'show']);
 Route::post('datauser/new',[UserDataController::class,'store']);
 Route::put('datauser/update/{user}',[UserDataController::class,'update']);
-// ---- nota para eliminar los datso de un usuario se elimina directamente el usuario 
+// ---- nota para eliminar los datos de un usuario se elimina directamente el usuario 
 // methods publication 
 Route::get('publication',[PublicationController::class,'index']);
 Route::get('publication/{publication}',[PublicationController::class,'show']);
