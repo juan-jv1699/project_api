@@ -79,4 +79,24 @@ class CommentController extends Controller
             'msg'=>'comentario eliminado con exito'
         ]);
     }
-}
+
+    public function all($id_publication)
+    {
+        $comments = Comment::where('publication_id',$id_publication)->get();
+        // dd(sizeof($comments),$comments);
+        if(sizeof($comments) != 0)
+        {
+            return response()->json([
+                'res'=>true,
+                'msg'=>'todos los comentarios de una publicacion',
+                'data'=>$comments,
+            ]);
+        }else {
+            return response()->json([
+                'res'=>false,
+                'msg'=>'no hay comentarios para esta publicacion',
+                'data'=>$comments,
+            ]);
+        }
+    }
+}//final de la clase

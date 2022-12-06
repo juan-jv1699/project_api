@@ -12,4 +12,9 @@ class Publication extends Model
         'content',
         'user_id'
     ];
+
+    public function comment()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }

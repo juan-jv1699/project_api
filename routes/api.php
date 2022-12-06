@@ -75,6 +75,7 @@ Route::delete('images_publication/delete/{ImagesPublication}',[ImagesPublication
 
 // methods comment
 Route::get('comment/{comment}',[CommentController::class,'show']);
+Route::get('comment/all/{id_publication}',[CommentController::class,'all']);
 Route::post('comment/new',[CommentController::class,'store']);
 Route::put('comment/update/{comment}',[CommentController::class,'update']);
 Route::delete('comment/delete/{comment}',[CommentController::class,'destroy']);
