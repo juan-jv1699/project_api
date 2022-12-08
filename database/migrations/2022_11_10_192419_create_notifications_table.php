@@ -20,8 +20,8 @@ return new class extends Migration
             $table->foreign('type_notification_id')->references('id')->on('type_notifications');
             $table->unsignedBigInteger('receiver_id');
             $table->unsignedBigInteger('transmitter_id');
-            $table->foreign('receiver_id')->references('id')->on('users');
-            $table->foreign('transmitter_id')->references('id')->on('users');
+            $table->foreign('receiver_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('transmitter_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
