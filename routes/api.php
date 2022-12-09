@@ -85,8 +85,7 @@ Route::get('notification/{notification}',[NotificationController::class,'show'])
 Route::post('notification/new',[NotificationController::class,'store']);
 Route::delete('notification/delete/{notification}',[NotificationController::class,'destroy']);
 
-    //Rutas Añadidas Por Esteban
-    
+//Rutas Añadidas Por Esteban    
    
   //Methods Reports
   Route::get('reports',[ReportController::class,'index']);//Y
