@@ -23,10 +23,11 @@ class LikeController extends Controller
 
     public function store(SaveLikeRequest $request)
     {
-        Like::create($request->all());
+        $like = Like::create($request->all());
         return response()->json([
             'res' => true,
-            'msg' => "Gusto creado y  publicacion guardada exitosamente!"
+            'msg' => "Gusto creado y  publicacion guardada exitosamente!",
+            'data' => $like
         ],200);
     }
 
