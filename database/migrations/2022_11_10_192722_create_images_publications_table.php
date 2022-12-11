@@ -18,9 +18,6 @@ return new class extends Migration
             $table->unsignedBigInteger('publication_id');
             $table->foreign('publication_id')->references('id')->on('publications');
             $table->string('img01');
-            $table->string('img02');
-            $table->string('img03');
-            $table->string('img04');
             $table->timestamps();
         });
     }

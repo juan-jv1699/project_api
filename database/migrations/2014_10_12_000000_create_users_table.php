@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('cc');
             $table->tinyInteger('role')->default(2);
             $table->timestamp('email_verified_at')->nullable();
+            $table->string('image')->default('https://p16-va-default.akamaized.net/img/musically-maliva-obj/1665282759496710~c5_720x720.jpeg');
             $table->rememberToken();
             $table->timestamps();
         });

@@ -10,7 +10,9 @@ class Publication extends Model
     protected $fillable = [
         'title',
         'content',
-        'user_id'
+        'user_id',
+        'type_publication_id',
+        'image',
     ];
 
     public function comment()

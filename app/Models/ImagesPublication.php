@@ -10,8 +10,6 @@ class ImagesPublication extends Model
     protected $fillable = [
         'publication_id',
         'img01',
-        'img02',
-        'img03',
-        'img04'
+        
     ];
 }
