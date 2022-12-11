@@ -81,6 +81,7 @@ Route::put('comment/update/{comment}',[CommentController::class,'update']);
 Route::delete('comment/delete/{comment}',[CommentController::class,'destroy']);
 
 // methods notification
+Route::get('notification',[NotificationController::class,'index']);
 Route::get('notification/{notification}',[NotificationController::class,'show']);
 Route::post('notification/new',[NotificationController::class,'store']);
 Route::delete('notification/delete/{notification}',[NotificationController::class,'destroy']);
