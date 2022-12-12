@@ -20,6 +20,7 @@ class AuthenticationController extends Controller
         $user->password = bcrypt($request->password);
         $user->birthdate = $request->birthdate;
         $user->cc = $request->cc;
+        $user->image = $request->image;
         $user->save();
         return response()->json([
             'res'=>true,
