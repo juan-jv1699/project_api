@@ -21,9 +21,9 @@ class LikeController extends Controller
         return Like::all();
     }
 
-    public function likesOfUser($user)
+    public function likesUser($user)
     {
-        return Like::where('user_id','=',$user);
+        return Like::where("user_id","=",$user)->get();
     }
 
     public function store(SaveLikeRequest $request)

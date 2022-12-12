@@ -118,9 +118,9 @@ Route::delete('notification/delete/{notification}',[NotificationController::clas
 
   //Methods Likes 
   Route::get('like',[LikeController::class,'index']);//Y
-  Route::post('like',[LikeController::class,'store']);//Y
   Route::get('like/{like}',[LikeController::class,'show']);//Y
-  Route::get('like/{user}',[LikeController::class,'likesOfUser']);//Y
+  Route::get('like/user/{user}',[LikeController::class,'likesUser']);
+  Route::post('like',[LikeController::class,'store']);//Y
   Route::put('like/{like}',[LikeController::class,'update']);//Y
   Route::delete('like/{like}',[LikeController::class,'destroy']);//Y
 
