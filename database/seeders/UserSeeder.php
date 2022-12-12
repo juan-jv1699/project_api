@@ -110,6 +110,78 @@ class UserSeeder extends Seeder
                 'role'=>3,
                 'image'=>'https://p16-va-default.akamaized.net/img/musically-maliva-obj/1665282759496710~c5_720x720.jpeg'
             ],
+            [
+                'name' => 'Carlos Lopez',
+                'email' => 'carlos@gmail.com',
+                'password' => Hash::make('12345'),    
+                'birthdate' => '1980-10-17',
+                'cc' => '123766218',
+                'role'=>2,
+                'image'=>'https://st.depositphotos.com/1075946/4778/i/950/depositphotos_47785985-stock-photo-smiling-farmer.jpg'
+            ],
+            [
+                'name' => 'Rodolfo Aicardi',
+                'email' => 'diciembre@gmail.com',
+                'password' => Hash::make('12345'),    
+                'birthdate' => '1946-05-23',
+                'cc' => '123866218',
+                'role'=>2,
+                'image'=>'https://www.otraparte.org/wp-content/uploads/rodolfo-aicardi-1.jpg'
+            ],
+            [
+                'name' => 'Guillermo Buitrago',
+                'email' => 'ronvinola@gmail.com',
+                'password' => Hash::make('12345'),    
+                'birthdate' => '1942-08-04',
+                'cc' => '823866218',
+                'role'=>2,
+                'image'=>'https://www.boyacaradio.com/imagenes/fotos_noticias/gjvfjn.jpg'
+            ],
+            [
+                'name' => 'Jesus Fuentes Buitrago',
+                'email' => 'discosfuentes@gmail.com',
+                'password' => Hash::make('12345'),    
+                'birthdate' => '1960-12-24',
+                'cc' => '822866218',
+                'role'=>2,
+                'image'=>'https://thumbs.dreamstime.com/b/misericordia-divina-de-jes%C3%BAs-la-pintura-digital-jesus-hecha-con-photoshop-182548279.jpg'
+            ],
+            [
+                'name' => 'José López',
+                'email' => 'pastorlopez@gmail.com',
+                'password' => Hash::make('12345'),    
+                'birthdate' => '1954-12-31',
+                'cc' => '822866298',
+                'role'=>3,
+                'image'=>'https://cnnespanol.cnn.com/wp-content/uploads/2019/04/pastor-lopez-e1554515772145.jpg?quality=100&strip=info'
+            ],
+            [
+                'name' => 'Julio Jaramillo',
+                'email' => 'fatalidad@gmail.com',
+                'password' => Hash::make('12345'),    
+                'birthdate' => '1944-01-12',
+                'cc' => '822866278',
+                'role'=>3,
+                'image'=>'https://www.elsoldemexico.com.mx/incoming/8zpkts-julio-jaramillo-especial.jpg/ALTERNATES/LANDSCAPE_768/julio-jaramillo-especial.jpg'
+            ],
+            [
+                'name' => 'Tulio Arenas',
+                'email' => 'arenas@gmail.com',
+                'password' => Hash::make('12345'),    
+                'birthdate' => '1948-04-15',
+                'cc' => '822866271',
+                'role'=>3,
+                'image'=>'https://lanotapositiva.com/wp-content/uploads/2015/04/campo-4.jpg'
+            ],
+            [
+                'name' => 'Hector Cardenas',
+                'email' => 'cardenashector@gmail.com',
+                'password' => Hash::make('12345'),    
+                'birthdate' => '1950-01-28',
+                'cc' => '822866371',
+                'role'=>2,
+                'image'=>'http://photos1.blogger.com/blogger/651/2903/1600/juanvaldezFO4017g.jpg'
+            ],
        ]);
     }
 }
