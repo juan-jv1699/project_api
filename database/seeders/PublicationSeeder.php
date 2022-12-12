@@ -97,10 +97,52 @@ class PublicationSeeder extends Seeder
                 'image'=>'https://www.shutterstock.com/image-photo/hanging-potted-plant-flowerpot-man-260nw-1738977179.jpg'
             ],
             [
-                'title' => 'Cafe Colombiano',
-                'content' => 'Definitivamente no hay nada mejor para empezar el dia',
+                'title' => 'Nuevas leyes al campo',
+                'content' => '',
+                'user_id' => 8,
+                'image'=>'https://www.semillas.org.co/apc-aa-files/8b03e104b93235bb29d54dee0d3af830/nueva-ley-de-tierrasv2.jpg'
+            ],
+            [
+                'title' => 'Apoyando a la seleccion',
+                'content' => '',
+                'user_id' => 6,
+                'image'=>'https://www.elpais.com.co/files/article_multimedia_main/uploads/2018/06/19/5b2969f68226c.jpeg'
+            ],
+            [
+                'title' => 'Mandaria de la finca San Benito',
+                'content' => '',
+                'user_id' => 18,
+                'image'=>'https://i.blogs.es/40d04f/tangerines-1721633_1280-1-/840_560.jpg'
+            ],
+            [
+                'title' => 'Les presento a mi Familia',
+                'content' => 'Gracias a estas muejeres soy lo que soy',
+                'user_id' => 11,
+                'image'=>'https://www.minagricultura.gov.co/noticias/PublishingImages/editAgFliar.jpg'
+            ],
+            [
+                'title' => 'Inundación en Neira',
+                'content' => '',
+                'user_id' => 3,
+                'image'=>'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwe_dAhf7j-_Rh-m9c7sKiMZzbtFeHSHkN4g&usqp=CAU'
+            ],
+            [
+                'title' => 'Se busca agricultor en la finca El rancho',
+                'content' => 'Se necesita un recolector para la siguiente temporada, el empleo incluye alojamiento, alimentación, prestaciones de servicios, y ademas bonos por eficiencia. La persona debe tener experiencia',
+                'user_id' => 12,
+                'image'=>'https://static.elcorreo.com/www/multimedia/202204/20/media/cortadas/ofertas-trabajo-kpCG-U1601725137102swD-624x385@El%20Correo.jpg'
+            ],
+            [
+                'title' => 'Incendio en la finca el Rancho',
+                'content' => 'La pasada noche hubo un cortó electrico en la finca el rancho, murieron 3 trabajadores, el dueño de la finca y su esposa',
+                'user_id' => 14,
+                'image'=>'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkmxufE6ucXf-73QGYfZwXUmGvabvXBPnbHg&usqp=CAU'
+            ],
+            [
+                'title' => '¿Quien nos va a responder por la plata?',
+                'content' => 'Detienen al alcalde de neira por supuesta corrupcion y desperdicio insolito de fondos',
                 'user_id' => 13,
-                'image'=>'https://www.shutterstock.com/image-photo/hanging-potted-plant-flowerpot-man-260nw-1738977179.jpg'
+                'image'=>'https://www.semana.com/resizer/T6LII0IaA6WrfFsZDCMXmsehs-U=/1280x0/smart/filters:format(jpg):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/semana/RIWHBWJWC5AM3DG7NQKZ6PIWLQ.jpg'
             ],
             ]);
     }
