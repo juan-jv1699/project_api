@@ -120,6 +120,7 @@ Route::delete('notification/delete/{notification}',[NotificationController::clas
   Route::get('like',[LikeController::class,'index']);//Y
   Route::post('like',[LikeController::class,'store']);//Y
   Route::get('like/{like}',[LikeController::class,'show']);//Y
+  Route::get('like/{user}',[LikeController::class,'likesOfUser']);//Y
   Route::put('like/{like}',[LikeController::class,'update']);//Y
   Route::delete('like/{like}',[LikeController::class,'destroy']);//Y
 
