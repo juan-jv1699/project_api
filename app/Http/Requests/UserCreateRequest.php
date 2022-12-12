@@ -29,6 +29,7 @@ class UserCreateRequest extends FormRequest
             'password' => 'required',
             'birthdate' => 'required',
             'cc' => 'required|unique:users,cc',
+            'image' => 'required',
         ];
     }
 }
