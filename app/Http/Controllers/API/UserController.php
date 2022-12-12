@@ -74,4 +74,9 @@ class UserController extends Controller
         $user->delete();
         return (new UserResource($user))->additional(['msg'=>'Usuario eliminado correctamente']);
     }
+
+    public function allPublication(User $user)
+    {
+        return $user->publications()->get();
+    }
 }

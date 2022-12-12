@@ -47,6 +47,7 @@ Route::group(['middleware'=>['auth:sanctum']],function(){
 Route::get('user/all',[UserController::class,'allUsers']);
 
 Route::get('user/mostrar/{user}',[UserController::class,'show']);
+Route::get('user/publications/{user}',[UserController::class,'allPublication']);
 
 Route::post('user/new',[UserController::class,'store']);
 
@@ -59,6 +60,7 @@ Route::get('datauser/{user}',[UserDataController::class,'show']);
 Route::post('datauser/new',[UserDataController::class,'store']);
 Route::put('datauser/update/{user}',[UserDataController::class,'update']);
 // ---- nota para eliminar los datos de un usuario se elimina directamente el usuario 
+
 // methods publication 
 Route::get('publication',[PublicationController::class,'index']);
 Route::get('publication/{publication}',[PublicationController::class,'show']);
