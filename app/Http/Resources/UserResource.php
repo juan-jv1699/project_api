@@ -21,6 +21,7 @@ class UserResource extends JsonResource
             "birthdate"=>$this->birthdate,
             "cc"=>$this->cc,
             "role"=>$this->role,
+            "image"=>$this->image
         ];
     }
     public function with($request)
